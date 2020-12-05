@@ -5,18 +5,13 @@ tempList = []
 req = ["byr","iyr","eyr","hgt","hcl","ecl","pid"]
 with open('input.txt', 'r') as file:
     lines = file.readlines()
-
 for line in lines:
-
     if line != "\n":
-        #print(line)
-        line = line.replace(" ",",").replace("\n", "").split(",")
-        #print(line)
-        for j in line:
-            tempList.append(j.split(":")[0])
+        line = [i.split(":")[0] for i in line.split()]
+        for z in line:
+            tempList.append(z)
     else:
         persons.append(tempList)
-        print("new person" + str(tempList))
         tempList = []
 print(len(persons))
 for person in persons:
