@@ -1,3 +1,3 @@
 # adventofcode2020
-Advent of code
-Problems found on https://adventofcode.com
+Advent of code.
+Problems found at https://adventofcode.com
