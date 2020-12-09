@@ -6,8 +6,9 @@ for line in lines:
         ins.append(line.replace("\n",  ""))
 for i in range(26,len(ins)):
     found = False
+    x,y = 0,0
     for j in range(0+(i-26),26+(i-26)):
-        for z in range(0,j):
+        for z in range(i-26,j):
             if int(ins[j]) + int(ins[z]) == int(ins[i]):
                 found = True
                 break
