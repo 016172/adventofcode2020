@@ -4,11 +4,18 @@ with open('input.txt', 'r') as file:
 for line in lines:
     if line != "\n":
         ins.append(int(line.replace("\n",  "")))
-nbrvalid = 0
 ins.sort()
-f=[0]*len(ins)
-f[0],f[1],f[2] = 1,1,2
-for i in ins:
+f=[0]*(max(ins)+1)
+n = ins[2]
+f[0],f[ins[0]],f[ins[1]] = 1,1,2
+while n < max(ins)+1:
+    if not n in ins:
+        f[n] = 0
+    else:
+        f[n] = (f[n-1] + f[n-2] + f[n-3])
+    n += 1
+print(max(f))
+
 
 
 #0-0 1
@@ -17,3 +24,13 @@ for i in ins:
 #0-3, 1+1+1+1=4
 #0-4 7
 #0-6, 11
+
+#0-0 1
+#0-1 1
+#0-2 2
+#0-3 4
+#0-6 4
+#0-9 4
+#0-10 4
+#0-11 8
+#0-12 16
