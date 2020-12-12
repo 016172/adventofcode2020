@@ -21,11 +21,3 @@ for i in ins:
     else:
         dirs[instr] = dirs[instr] + v
 print(abs(dirs["N"]-dirs["S"]) + abs(dirs["E"]-dirs["W"]))
-
-
-
-
-
-    #1
-#2     #3
-    #4
