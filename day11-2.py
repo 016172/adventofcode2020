@@ -24,7 +24,7 @@ def findadj(i,j):
                     if ins[x][y] == "#":
                         nbr += 1
                     else:
-                        print("to be continued")
+                        print("to be continuesd")
 
     return nbr
 while True:
