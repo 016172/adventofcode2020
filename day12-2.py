@@ -1,7 +1,5 @@
 ins = []
 dirs = {"N":0,"E":0,"S":0,"W":0,"dir":"E"}
-deg = [0,90,180,270]
-totdegree = 0
 waypoint = [10,0,0,1]
 di = ["E","S","W","N"]
 with open('input.txt', 'r') as file:
@@ -16,8 +14,6 @@ for i in ins:
         for i in range(len(newPos)):
             dirs[di[i]] += newPos[i]
     elif instr == "R":
-        totdegree = (totdegree + v)%360
-        dirs["dir"] = di[deg.index(totdegree)]
         if v == 90:
             waypoint = [waypoint[3],waypoint[0],waypoint[1],waypoint[2]]
         elif v == 180:
@@ -25,8 +21,6 @@ for i in ins:
         elif v == 270:
             waypoint = [waypoint[1],waypoint[2],waypoint[3],waypoint[0]]
     elif instr == "L":
-        totdegree = (totdegree - v)%360
-        dirs["dir"] = di[deg.index(totdegree)]
         if v == 90:
             waypoint = [waypoint[1],waypoint[2],waypoint[3],waypoint[0]]
         elif v == 180:
