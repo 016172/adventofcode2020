@@ -17,7 +17,6 @@ for i in range(len(ins)):
             if val[i] != vmask[i] and vmask[i] != 'X':
                 val[i] = vmask[i]
         stored[loc] = ''.join(val)
-
 for i in stored.values():
     sum+=int(i,2)
 print(sum)
