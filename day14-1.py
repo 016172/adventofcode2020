@@ -9,7 +9,6 @@ for i in range(len(ins)):
     if z[0] == "mask":
         vmask = z[1]
     else:
-        print(z)
         loc,val = int(z[0].split("[")[1].replace("]","")),list(bin(int(z[1])).split('b')[1])
         for i in range(len(vmask)-len(val),0,-1):
             val.insert(0,'0')
