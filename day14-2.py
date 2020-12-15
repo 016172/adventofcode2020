@@ -14,13 +14,11 @@ for i in range(len(ins)):
         sum = 0
         loc,val = int(z[0].split("[")[1].replace("]","")),list(bin(int(z[1])).split('b')[1])
         locs = list(bin(loc).split('b')[1])
-        #blir X1001X istället för X1101X
         for i in range(len(vmask)-len(locs),0,-1):
             locs.insert(0,'0')
         for i in range(len(vmask)):
             if vmask[i] != '0':
                 locs[i] = vmask[i]
-        #print(''.join(str(e) for e in locs))
         for k in combinations([0,1]*locs.count('X'),locs.count('X')):
             if list(k) not in tried:
                 tried.append(list(k))
